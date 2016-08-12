@@ -1,7 +1,7 @@
 future==0.15.2
 requests==2.9.1
 six==1.10.0
-slackbot==0.3.0
+slackbot==0.4.1
 slackclient==0.17
 slacker==0.9.0
 SQLAlchemy==1.0.12
