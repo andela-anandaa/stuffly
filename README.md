@@ -5,6 +5,10 @@ We've currently built a client Slack bot for Andela Slack Org which called _@stu
 
 ## Schematic Diagram
 
+Simple digram explaining our setup:
+
+![stuffly-dgm-01](https://cloud.githubusercontent.com/assets/13568167/17643990/5cee937c-6183-11e6-8523-45bae93f9180.png)
+
 ## Setting Up Arduino
 
 Download and install Arduino IDE for mac [here](https://www.arduino.cc/en/Main/Software).
