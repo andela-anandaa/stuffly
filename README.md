@@ -65,3 +65,11 @@ PLUGINS = [
     'mybot.plugins'
 ]
 ```
+
+# Credits
+Big shout out to the _HackHeads_ team:
+
+- [@andela-emabishi](andela-emabishi) (Team Lead)
+- [@johnkariuki](johnkariuki)
+- [@bernard-kanyolo](bernard-kanyolo)
+- [@andela-anandaa](andela-anandaa)
