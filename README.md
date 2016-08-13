@@ -51,3 +51,17 @@ chmod u+x stuffly/arduino/read_arduino.sh
 Open `stuffly/arduino/arduino.ino` on the arduino IDE and click upload to push it on to the board.
 
 Run `./read_arduino.sh` to read the temperature, humidity, air pressure levels to an sqlite database.
+
+
+# Slack Bot
+
+`slackbot_settings.py` is excluded because of obscuring the `API_TOKEN`. However, this is the format:
+
+```
+API_TOKEN = "xoxb-xxxxxxxx"
+
+PLUGINS = [
+    'slackbot.plugins',
+    'mybot.plugins'
+]
+```

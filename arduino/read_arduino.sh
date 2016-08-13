@@ -4,7 +4,7 @@
 LogLine(){
   query="insert into state (id, location, timestamp, temperature, pressure, altitude, humidity) values (NULL, 'valhala', `date +%s`, ${line}"
   echo $query
-  sqlite3 arduino.db3 "insert into state (id, location, timestamp, temperature, pressure, altitude, humidity) values (NULL, 'valhala', `date +%s`, ${line}"
+  sqlite3 arduino.db3 "insert into state (id, location, timestamp, temperature, pressure, altitude, humidity) values (NULL, 'valhalla', `date +%s`, ${line}"
 }
 ### Main script stars here ###
 # Store file name
