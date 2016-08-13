@@ -1,5 +1,12 @@
-# stuffly
-Andela IoT Hackathon 2016
+# Stuffly
+Stuffly is an IoT app built during the Andela IoT Hackathon. It basically gives real time updates on temperature, humidity and air-pressure for a particular room. Through this, we can determine if a room is stuffy or not &mdash; hence the name **stuff**ly.
+
+We've currently built a client Slack bot for Andela Slack Org which called _@stuffly_ through which you can interact with the IoT app.
+
+## Schematic Diagram
+Simple digram explaining our setup:
+
+![stuffly-dgm-01](https://cloud.githubusercontent.com/assets/13568167/17643990/5cee937c-6183-11e6-8523-45bae93f9180.png)
 
 ## Setting Up Arduino
 
@@ -54,6 +61,18 @@ Run `./read_arduino.sh` to read the temperature, humidity, air pressure levels t
 
 
 # Slack Bot
+
+## Usage
+You can send the following messages to @stuffly bot to get the states of various rooms:
+
+- Is [room] stuffy?
+- What is the temperature at [room]?
+- What is the humidity at [room]?
+
+
+
+## Dev
+We are using the [slackbot] Python library.
 
 `slackbot_settings.py` is excluded because of obscuring the `API_TOKEN`. However, this is the format:
 
