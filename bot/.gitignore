@@ -1,2 +1,2 @@
 slackbot_settings.py
-*.pyc
+*.py[co]

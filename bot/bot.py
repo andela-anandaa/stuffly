@@ -8,18 +8,11 @@ from slackbot.bot import respond_to, listen_to, default_reply
 
 import bot_methods as bm
 
-
-sample_data = {
-    'temp': 20,
-    'humidity': 67,
-    'air_pressure': 30
-}
-
 # default replies
 dr = [
     'Hey, I\'m Stuffly, I can help you know if a room is stuffy',
     'You know I\'m in private beta, I might not answer all of your questions :)',
-    'Ask on Zhishi :-D',
+    'BTW, did you attend the IoT hackathon? :)',
     'Ask me, "what\'s the temperature?" I\'ll tell you :)'
 ]
 
@@ -33,12 +26,39 @@ def hi(message):
     message.reply('I think you are greeting me, hi :-)')
     # message.react('+1')
 
-@respond_to('what\'s the temperature', re.IGNORECASE)
-@respond_to('temperature', re.IGNORECASE)
-@respond_to('temp', re.IGNORECASE)
-def temp(message):
-    message.reply('The temperature now is {}'.format(sample_data['temp']))
-    # message.react('+1')
+@respond_to('Give me (.*)')
+def giveme(message, something):
+    message.reply('Here is {}'.format(something))
+
+
+@respond_to('what is the temp[a-z]* at (.*[^?])')
+@listen_to('what is the temp[a-z]* at (.*[^?])')
+def temp(message, loc):
+    _temp = bm.temperature(loc)
+    if _temp:
+        message.reply('The temperature at {} now is {}'.format(loc, _temp))
+    else:
+        message.reply('We don\'t have a sensor currently at {}'.format(loc))
+
+@respond_to('what is the humidity at (.*)?', re.IGNORECASE)
+@listen_to('what is the humidity at (.*)?', re.IGNORECASE)
+def humidity(message, loc):
+    _humidity = bm.humidity(loc)
+    if _humidity:
+        message.reply('The humidity at {} now is {}'.format(loc, _humidity))
+    else:
+        message.reply('We don\'t have a sensor at {}'.format(loc))
+
+@respond_to('Is (.*) stuffy\[?]?', re.IGNORECASE)
+@listen_to('Is (.*) stuffy\[?]?', re.IGNORECASE)
+def stuffy(message, loc):
+    st = bm.is_stuffy(loc)
+    if st == True:
+        message.reply('Yes, {} is stuffy :('.format(loc))
+    elif st == False :
+        message.reply('No, {} is okay :)'.format(loc))
+    else:
+        message.reply('We don\'t have a sensor at {}'.format(loc))
 
 @default_reply
 def my_default_hanlder(message):

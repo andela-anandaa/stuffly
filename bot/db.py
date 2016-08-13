@@ -21,12 +21,24 @@ class Db(object):
         mapper(State, state)
 
         Session = sessionmaker(bind=engine)
-        self.session = Session()
+        self.make_session = Session
 
     def latest_data(self):
         '''return the latest set of data saved in the database
         '''
-        return self.row_to_dict(self.session.query(State).order_by(State.id.desc()).first())
+        session = self.make_session()
+        res = self.row_to_dict(session.query(State).order_by(State.id.desc()).first())
+        session.close()
+        return res
+
+    def get_loc_data(self, loc):
+        session = self.make_session()
+        res = session.query(State).filter(State.location == loc)\
+            .order_by(State.id.desc()).first()
+        session.close()
+        if res:
+            res = self.row_to_dict(res)
+        return res
 
     def row_to_dict(self, row):
         '''convert row result to a dictionary
