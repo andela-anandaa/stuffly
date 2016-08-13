@@ -36,16 +36,16 @@ def giveme(message, something):
 def temp(message, loc):
     _temp = bm.temperature(loc)
     if _temp:
-        message.reply('The temperature at {} now is {}'.format(loc, _temp))
+        message.reply('The temperature at {} now is {} degrees Celsius'.format(loc, _temp))
     else:
         message.reply('We don\'t have a sensor currently at {}'.format(loc))
 
-@respond_to('what is the humidity at (.*)?', re.IGNORECASE)
-@listen_to('what is the humidity at (.*)?', re.IGNORECASE)
+@respond_to('what is the humidity at (.*[^?])', re.IGNORECASE)
+@listen_to('what is the humidity at (.*[^?])', re.IGNORECASE)
 def humidity(message, loc):
     _humidity = bm.humidity(loc)
     if _humidity:
-        message.reply('The humidity at {} now is {}'.format(loc, _humidity))
+        message.reply('The humidity at {} now is {}%'.format(loc, _humidity))
     else:
         message.reply('We don\'t have a sensor at {}'.format(loc))
 
