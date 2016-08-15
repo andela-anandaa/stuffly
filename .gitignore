@@ -1,2 +1,6 @@
 stuffy.db
 .DS_Store
+
+*.py[co]
+firebase/config.py
+slackbot_settings.py

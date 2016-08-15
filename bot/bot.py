@@ -20,19 +20,13 @@ def main():
     bot = Bot()
     bot.run()
 
-@respond_to('sup', re.IGNORECASE)
-@listen_to('sup', re.IGNORECASE)
+@respond_to('stuffy', re.IGNORECASE)
+@listen_to('stuffy', re.IGNORECASE)
 def hi(message):
-    message.reply('I think you are greeting me, hi :-)')
-    # message.react('+1')
+    message.reply('I can tell you if a room is stuffy')
 
-@respond_to('Give me (.*)')
-def giveme(message, something):
-    message.reply('Here is {}'.format(something))
-
-
-@respond_to('what is the temp[a-z]* at (.*[^?])')
-@listen_to('what is the temp[a-z]* at (.*[^?])')
+@respond_to('what is the temp[a-z]* .* (.*[^?])')
+@listen_to('what is the temp[a-z]* .* (.*[^?])')
 def temp(message, loc):
     _temp = bm.temperature(loc)
     if _temp:
@@ -40,8 +34,8 @@ def temp(message, loc):
     else:
         message.reply('We don\'t have a sensor currently at {}'.format(loc))
 
-@respond_to('what is the humidity at (.*[^?])', re.IGNORECASE)
-@listen_to('what is the humidity at (.*[^?])', re.IGNORECASE)
+@respond_to('what is the humidity .* (.*[^?])', re.IGNORECASE)
+@listen_to('what is the humidity .* (.*[^?])', re.IGNORECASE)
 def humidity(message, loc):
     _humidity = bm.humidity(loc)
     if _humidity:
