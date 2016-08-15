@@ -73,7 +73,7 @@ You can send the following messages to @stuffly bot to get the states of various
 
 
 ## Dev
-We are using the [slackbot] Python library.
+We are using the [slackbot](https://github.com/lins05/slackbot) Python package.
 
 `slackbot_settings.py` is excluded because of obscuring the `API_TOKEN`. However, this is the format:
 
