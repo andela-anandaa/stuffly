@@ -27,6 +27,27 @@ git clone git@github.com:adafruit/Adafruit_BME280_Library.git
 git clone git@github.com:adafruit/Adafruit_Sensor.git
 ```
 
+## Wiring Setup
+
+The components required are as follows:
+* Breadboard
+* Arduino Microcontroller
+* BME 280 Humidity Barometric Pressure Temperature Sensor Breakout
+* Jumper cables
+* Arduino to USB cable
+* External DC Power Supply (for portability)
+
+### Connect the components together as follows:
+
+* Connect Vin to the power supply, 3-5V is fine. Use the same voltage that the microcontroller logic is based off of. For most Arduinos, that is 5V.
+* Connect GND to common power/data ground.
+* Connect the SCL pin to the I2C clock SCL pin on your Arduino. On an UNO & '328 based Arduino, this is also known as A5, on a Mega it is also known as digital 21 and on a Leonardo/Micro, digital 3.
+* Connect the SDA pin to the I2C data SDA pin on your Arduino. On an UNO & '328 based Arduino, this is also known as A4, on a Mega it is also known as digital 20 and on a Leonardo/Micro, digital 2.
+
+
+This is shown below:
+
+![here] (/stuffly_breadboard.jpg)
 
 
 ## Connect the board
@@ -90,7 +111,7 @@ To run the Slack bot:
 ```
 $ cd stuffly
 $ python -m bot.bot
-``` 
+```
 
 ## Quick Note on Firebase
 - We're using the package [python-firebase](https://pypi.python.org/pypi/python-firebase/1.2) package.
