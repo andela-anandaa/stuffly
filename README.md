@@ -86,10 +86,27 @@ PLUGINS = [
 ]
 ```
 
+To run the Slack bot:
+```
+$ cd stuffly
+$ python -m bot.bot
+``` 
+
+## Quick Note on Firebase
+- We're using the package [python-firebase](https://pypi.python.org/pypi/python-firebase/1.2) package.
+- `_firebase/config.py` file is gitignored but this is the format of the content:
+```python
+config = {
+    "firebase": "https://<your-firebase-url>.firebaseio.com/"
+}
+```
+
+
 # Credits
 Big shout out to the _HackHeads_ team:
 
 - [@andela-emabishi](https://github.com/andela-emabishi) (Team Lead)
 - [@johnkariuki](https://github.com/johnkariuki)
 - [@bernard-kanyolo](https://github.com/bernard-kanyolo)
+- [@andela-omugeri](https://github.com/andela-omugeri)
 - [@andela-anandaa](https://github.com/andela-anandaa)
