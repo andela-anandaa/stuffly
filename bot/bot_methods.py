@@ -25,9 +25,9 @@ def is_stuffy(loc):
     loc = loc.lower()
     if loc == 'valhalla' or loc == 'valhala':
         loc = 'valhalla' # for misspelling
-        data = _db.get_loc_data(loc)
+        data = _db.get_loc_data(rootRef, loc)
         if data:
-            if data['humidity'] < 30 or data['humidity'] > 60:
+            if float(data['humidity']) < 30 or float(data['humidity']) > 60:
                 return True
             else:
                 return False

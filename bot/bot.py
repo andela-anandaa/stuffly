@@ -20,13 +20,13 @@ def main():
     bot = Bot()
     bot.run()
 
-@respond_to('stuffy', re.IGNORECASE)
-@listen_to('stuffy', re.IGNORECASE)
+@respond_to('what do you do\[?]?', re.IGNORECASE)
+@listen_to('what do you do\[?]?', re.IGNORECASE)
 def hi(message):
     message.reply('I can tell you if a room is stuffy')
 
-@respond_to('what is the temp[a-z]* .* (.*[^?])')
-@listen_to('what is the temp[a-z]* .* (.*[^?])')
+@respond_to('what is the temp[a-z]* .* (.*[^?])', re.IGNORECASE)
+@listen_to('what is the temp[a-z]* .* (.*[^?])', re.IGNORECASE)
 def temp(message, loc):
     _temp = bm.temperature(loc)
     if _temp:

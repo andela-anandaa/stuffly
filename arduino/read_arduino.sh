@@ -6,7 +6,7 @@ LogLine(){
   echo $query
   sqlite3 arduino.db3 "insert into state (id, location, timestamp, temperature, pressure, altitude, humidity) values (NULL, 'valhalla', `date +%s`, ${line}"
   # post to firebase
-  python ../_firebase/post_data.py "valhalla,`date +%s`, ${line}"
+  python ./_firebase/post_data.py "valhalla,`date +%s`, ${line}"
 }
 ### Main script stars here ###
 # Store file name

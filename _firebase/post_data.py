@@ -9,7 +9,7 @@ fb_url = config['firebase']
 rootRef = '/sample/status/'
 
 if len(sys.argv) > 1:
-    data = sys.argv[1][:-1]
+    data = sys.argv[1][:-3]
     # location, timestamp, temperature, pressure, altitude, humidity
     data = data.split(",")
     if len(data) == 6:
