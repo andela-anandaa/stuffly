@@ -1,4 +1,5 @@
 future==0.15.2
+python-firebase==1.2
 requests==2.9.1
 six==1.10.0
 slackbot==0.4.1
