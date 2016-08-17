@@ -1,7 +1,7 @@
 # Stuffly
 Stuffly is an IoT app built during the Andela IoT Hackathon. It basically gives real time updates on temperature, humidity and air-pressure for a particular room. Through this, we can determine if a room is stuffy or not &mdash; hence the name **stuff**ly.
 
-We've currently built a client Slack bot for Andela Slack Org which called _@stuffly_ through which you can interact with the IoT app.
+We've currently built a client Slack bot for Andela Slack Org, called _@stuffly_ through which you can interact with the IoT app.
 
 ## Schematic Diagram
 
@@ -114,17 +114,17 @@ $ python -m bot.bot
 ```
 
 ## Quick Note on Firebase
-- We're using the package [python-firebase](https://pypi.python.org/pypi/python-firebase/1.2) package.
+- We're using the [python-firebase](https://pypi.python.org/pypi/python-firebase/1.2) package.
 - `_firebase/config.py` file is gitignored but this is the format of the content:
 ```python
 config = {
     "firebase": "https://<your-firebase-url>.firebaseio.com/"
 }
 ```
-
+- NB: should migrate to using [pyfirebase](https://github.com/andela-cnnadi/pyfirebase), which is much cleaner.
 
 # Credits
-Big shout out to the _HackHeads_ team:
+Big shout-out to the _HackHeads_ team:
 
 - [@andela-emabishi](https://github.com/andela-emabishi) (Team Lead)
 - [@johnkariuki](https://github.com/johnkariuki)
